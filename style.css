@@ -198,12 +198,17 @@ ul {
 }
 
 footer{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    background-color: red;
-    color: white;
-    text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+footer p {
+  color: white;
 }
 
 
