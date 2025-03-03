@@ -1,3 +1,14 @@
+function Cart() {
+    window.location.href = "./cart.html"
+}
+function Home() {
+    window.location.href = "./index.html"
+}
+function burgerMenu() {
+    window.location.href = "./menu.html"
+}
+
+
 let plus = document.querySelector(".plus")
 let minus = document.querySelector(".minus")
 let product = document.querySelector(".cardd")
@@ -7,23 +18,6 @@ fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
     console.log(data);
     
     data.forEach(item => product.innerHTML += card(item))})
-
-
-
-
-    
-    
-function gotoCart() {
-    window.location.href = "./cart.html"
-}
-function gotoHome() {
-    window.location.href = "./index.html"
-}
-function gotoMenu() {
-    window.location.href = "./menu.html"
-}
-
-
 
 
 function card(item){
