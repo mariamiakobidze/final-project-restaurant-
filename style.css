@@ -132,15 +132,7 @@ h2{
     background-color: #ff5722;
     color: #fff;
   }
-ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0px;
-    margin: 20px 0;
-    list-style: none;
-    cursor: pointer;
-}
+
 .allproducts{
     display: flex;
     justify-content: center;
@@ -162,87 +154,13 @@ ul {
     transition: 0.7s;
     cursor: pointer;
 }
-.xazi{
+hr{
     width: 100%;
     margin-bottom: 50px;
     margin-top: -20.5px;
     height: 2px;
     background-color: red;
 }
-.filter{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding-left: 20px;
-    width: 250px;
-    background-color: rgba(192, 192, 192, 0.229);
-    border: 1px solid black;
-    gap: 15px;
-    height: 350px;
-}
-.filup{
-    display: flex;
-    justify-content: space-between;
-    width: 230px;
-    padding-right: 15px;
-}
-.fa-filter{
-    margin-top: 15px;
-}
-.filh{
-    font-size: 17px;
-}
-section{
-    display: flex;
-    justify-content: center;
-}
-.sp{
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
-#sicxare{
-    width: 80%;
-}
-.area{
-    width: 230px;
-    display: flex;
-    justify-content: space-between;
-}
-.buts{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 230px;
-    margin-top: 30px;
-    gap: 30px;
-}
-.but, .lab{
-    font-size: 17px;
-}
-.but{
-    width: 200px;
-    height: 30px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: 0.7s;
-}
-.but:hover{
-    cursor: pointer;
-    transition: 0.7s;
-    background-color: yellow;
-}
-
-footer{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    background-color: red;
-    color: white;
-    text-align: center;
-}
-
 .navhome{
     cursor: pointer;
 }
@@ -262,6 +180,34 @@ footer{
 #bars{
     display: none;
 }
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 20px;
+    width: 250px;
+    background-color: rgba(192, 192, 192, 0.229);
+    border: 1px solid black;
+    gap: 15px;
+    height: 350px;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+
+footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
 
 @media (max-width: 500px){
     #bars{
