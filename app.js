@@ -84,22 +84,24 @@ function card(item) {
         veg = ''
     }
     return `<div class="card">
-    <img 
-      src="${item.image}"/>
-    <div class="card-content">
-      <h3>${item.name}</h3>
-      <p>Spiciness: 2</p>
-      <div class="badges">
-        <span class="badge">${item.nuts}</span>
-        <span class="badge">${item.vegetarian}</span>
+        <img 
+          src="${item.image}"/>
+        <div class="card-content">
+          <h3>${item.name}</h3>
+          <p>Spiciness: 2</p>
+          <div class="badges">
+            <span class="badge">Nuts <i class="fa-solid fa-${item.nuts ?'check' : 'x'}"></i></span>
+            <span class="badge">Vegetarian <i class="fa-solid fa-${item.vegeterian ?'check' : 'x'}"></i></span>
+          </div>
+          <div class="card-footer">
+            <span class="price">${item.price}$</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
       </div>
-      <div class="card-footer">
-        <span class="price">${item.price}$</span>
-        <button class="add-to-cart">Add to cart</button>
-      </div>
-    </div>
-  </div>`
-}
+      `;
+    }
+    
 
 function addto(event, id) {
     
