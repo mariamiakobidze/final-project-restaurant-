@@ -263,6 +263,47 @@ footer{
     display: none;
 }
 
+.content-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.filter {
+  width: 250px;
+  flex-shrink: 0; 
+}
+
+.filter {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 400px;
+  margin: 20px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.filter label[for="sicxare"] {
+  color: red;
+  font-weight: bold;
+}
+
+
+.filter button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter button:hover {
+  opacity: 0.9;
+}
+
 @media (max-width: 500px){
     #bars{
         display: inline;

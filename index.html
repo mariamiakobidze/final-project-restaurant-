@@ -35,27 +35,31 @@
     <hr class="xazi">
     
     <section>
-        <div class="filter">
-            <div class="area">
-              <label for="sicxare">Spiciness</label>
-              <input type="range" min="-1" max="4" value="-1" id="sicxare" />
+        <div class="content-container">
+            <div class="filter">
+              <div class="area">
+                <label for="sicxare">Spiciness</label>
+                <input type="range" min="-1" max="4" value="-1" id="sicxare" />
+              </div>
+              <div class="area">
+                <label for="nuts">No Nuts</label>
+                <input type="checkbox" id="nuts" />
+              </div>
+              <div class="area">
+                <label for="vegan">Vegetarian Only</label>
+                <input type="checkbox" id="vegan" />
+              </div>
+              <div class="button">
+              <button onclick="filter()">Apply Filter</button>
+              <button onclick="Reset()">Reset</button>
             </div>
-            <div class="area">
-              <label for="nuts">No Nuts</label>
-              <input type="checkbox" id="nuts" />
             </div>
-            <div class="area">
-              <label for="vegan">Vegetarian Only</label>
-              <input type="checkbox" id="vegan" />
-            </div>
-            <button onclick="filter()">Apply Filter</button>
-            <button onclick="Reset()">Reset</button>
+          
+            <section></section>
           </div>
-        <div class="allproducts"></div>
-    </section>
     <footer>
         <p>© Step Ordering 2025, All rights reserved</p>
     </footer>
-    <script src="./app1.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
