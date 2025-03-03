@@ -192,22 +192,11 @@ ul {
 .filh{
     font-size: 17px;
 }
-section{
-    display: flex;
-    justify-content: center;
-}
 .sp{
     display: flex;
     flex-direction: column;
-    align-items: center;}
-#sicxare{
-    width: 80%;
-}
-.area{
-    width: 230px;
-    display: flex;
-    justify-content: space-between;
-}
+    align-items: center;
+  }
 .buts{
     display: flex;
     flex-direction: column;
