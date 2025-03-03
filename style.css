@@ -161,6 +161,69 @@ hr{
     height: 2px;
     background-color: red;
 }
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 20px;
+    width: 250px;
+    background-color: rgba(192, 192, 192, 0.229);
+    border: 1px solid black;
+    gap: 15px;
+    height: 350px;
+}
+.filup{
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    padding-right: 15px;
+}
+.fa-filter{
+    margin-top: 15px;
+}
+.filh{
+    font-size: 17px;
+}
+.sp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.buts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    margin-top: 30px;
+    gap: 30px;
+}
+.but, .lab{
+    font-size: 17px;
+}
+.but{
+    width: 200px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.7s;
+}
+.but:hover{
+    cursor: pointer;
+    transition: 0.7s;
+    background-color: yellow;
+}
+
+footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
 .navhome{
     cursor: pointer;
 }
@@ -181,33 +244,46 @@ hr{
     display: none;
 }
 
-.filter{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding-left: 20px;
-    width: 250px;
-    background-color: rgba(192, 192, 192, 0.229);
-    border: 1px solid black;
-    gap: 15px;
-    height: 350px;
+.content-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-section{
-    display: flex;
-    justify-content: center;
+.filter {
+  width: 250px;
+  flex-shrink: 0; 
+}
+
+.filter {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 400px;
+  margin: 20px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.filter label[for="sicxare"] {
+  color: red;
+  font-weight: bold;
 }
 
 
-footer{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    background-color: red;
-    color: white;
-    text-align: center;
+.filter button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
+.filter button:hover {
+  opacity: 0.9;
+}
 
 @media (max-width: 500px){
     #bars{
