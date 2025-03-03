@@ -9,7 +9,7 @@ function burgerMenu() {
 }
 
 
-let plus = document.querySelector(".plus")
+let plius = document.querySelector(".plius")
 let minus = document.querySelector(".minus")
 let product = document.querySelector(".cardd")
 fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
