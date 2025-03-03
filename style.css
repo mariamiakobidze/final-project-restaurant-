@@ -133,12 +133,21 @@ h2{
     color: #fff;
   }
 
-.allproducts{
+section{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    width: 70%;
+    
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid red;
 }
 .li{
     height: 80px;
@@ -154,13 +163,13 @@ h2{
     transition: 0.7s;
     cursor: pointer;
 }
-hr{
+/* hr{
     width: 100%;
     margin-bottom: 50px;
     margin-top: -20.5px;
     height: 2px;
     background-color: red;
-}
+} */
 .filter{
     display: flex;
     flex-direction: column;

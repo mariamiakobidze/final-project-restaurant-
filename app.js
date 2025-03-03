@@ -9,7 +9,7 @@ function burgerMenu() {
 }
 
 
-let allProducts = document.querySelector(".allproducts")
+let allProducts = document.querySelector("section")
 let ul = document.querySelector("ul")
 let sicxare = document.querySelector("#sicxare");
 let nuts = document.querySelector("#nuts");
