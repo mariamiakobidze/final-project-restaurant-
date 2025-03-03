@@ -1,0 +1,228 @@
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background-image: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg);
+    height: 375px;
+    background-attachment: fixed;
+    width: 100%;
+}
+.headertext{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+nav{
+    height: 70px;
+}
+.in{
+    left: 8px;
+    right: 8px;
+    position: fixed;
+    width: 100%-8px;
+    background-color: rgba(0, 0, 0, 0.663);
+    border: 3px solid black;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10% 0 10%;
+    width: 80%;
+    color: white;
+}
+.right{
+    align-items: center;
+    display: flex;
+    gap: 100px;
+}
+.logo2{
+    padding-left: 20px;
+}
+footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.cart{
+    text-align: center;
+    font-size: 36px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: rgba(128, 128, 128, 0.323);
+    border-bottom: solid 4px gray;
+}
+.titletwo{
+    display: flex;
+    gap: 105px;
+}
+.cardphoto{
+    width: 120px;
+    height: 120px;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 75px 0 20px;
+}
+.cardleft{
+    display: flex;
+    gap: 30px;
+}
+.cardright{
+    display: flex;
+    align-items: center;
+    gap: 110px;
+}
+.amount{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.x{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.plus, .minus{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.323);
+}
+
+.bottom{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.proceed{
+    background-color: red;
+    color: black;
+    border: none;
+    cursor: pointer;
+    width: 230px;
+    height: 50px;
+    transition: 0.6s;
+    font-weight: bold;
+}
+.proceed:hover{
+    background-color: yellow;
+    transition: 0.6s;
+}
+
+.pricespan{
+    color: red;
+}
+.namim{
+    display: flex;
+    gap: 30px;
+}
+.navhome{
+    cursor: pointer;
+}
+.navhome:hover{
+    color: yellow;
+    text-decoration: underline yellow;
+    transition: 1.8s;
+}
+.navcart{
+    cursor: pointer;
+}
+.navcart:hover{
+    color: yellow;
+    text-decoration: underline yellow;
+    transition: 1.9s;
+}
+#bars{
+    display: none;
+}
+
+@media (max-width: 850px){
+    #bars{
+        display: inline;
+        font-size: 30px;
+    }
+    .navhome, .navcart{
+        display: none;
+    }
+    .namim{
+        flex-direction: column;
+        gap: 0;
+    }
+    .card{
+        padding: 0 5% 0 20px;
+    }
+}
+@media (max-width: 550px){
+    .in{
+        position: static;
+    }
+    .bottom{
+        align-items: start;
+    }
+}
+@media (max-width: 770px){
+    .titletwo{
+        gap: 50px;
+    }
+    .cardright{
+        gap: 50px;
+    }
+    .card{
+        padding: 0 2.5% 0 20px;
+    }
+}
+@media (max-width: 590px){
+    .cardh{
+        font-size: 20px;
+    }
+}
+@media (max-width: 490px){
+    .cardphoto{
+        width: 80px;
+        height: 80px;
+    }
+    .cardh{
+        font-size: 16px;
+    }
+}
+@media (max-width: 450px){
+    .tith{
+        font-size: 16px;
+    }
+    .cardphoto{
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 400px){
+    .cardleft{
+        gap: 10px;
+    }
+    .titletwo{
+        gap: 30px;
+    }
+    .cardright{
+        gap: 30px;
+    }
+    .bottomh{
+        font-size: 20px;
+    }
+    .bottom{
+        margin-top: 30px;
+    }
+}

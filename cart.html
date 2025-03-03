@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="in">
+                <div class="nav">
+                    <div class="left">
+                        <h1 class="logo1">Step</h1>
+                        <h1 class="logo2">Ordering</h1>
+                    </div>
+                    <div class="right">
+                        <h1 onclick="gotoHome()" class="navhome">Home</h1>
+                        <h1 onclick="gotoCart()" class="navcart">Cart</h1>
+                        <i onclick="gotoMenu()" id="bars" class="fa-solid fa-bars burger"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="headertext">
+            <h1>My Cart.</h1>
+        </div>
+    </header>
+    <section>
+        <h1 class="cart">Cart</h1>
+        <div class="main">
+            <div class="title">
+                <h1 class="tith">Product</h1>
+                <div class="titletwo">
+                    <h1 class="tith">Qty</h1>
+                    <h1 class="tith">Price</h1>
+                    <h1 class="tith">Total</h1>
+                </div>
+            </div>
+            <div class="cardd"></div>
+        </div>
+        <div class="bottom">
+            <h1 class="bottomh">Total: <span class="pricespan">$52.5</span></h1>
+            <button class="proceed">PROCEED TO CHECKOUT</button>
+        </div>
+    </section>
+    <footer>
+        <p>© Step Ordering 2025, All rights reserved</p>
+    </footer>
+    
+    <script src="cart.js"></script>
+</body>
+</html>
