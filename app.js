@@ -40,10 +40,6 @@ function getFoods(id) {
         .then(data => data.products.forEach(item => allProducts.innerHTML += card(item)))
 }
 
-
-function noreload(e) {
-    e.preventDefault()
-}
 function filter() {
     let spicines;
     if (sicxare.value == "-1") {
@@ -69,20 +65,6 @@ function filter() {
   }
 
 function card(item) {
-    let nut
-    let veg
-    if(item.nuts){
-        nut = 'checked'
-    }
-    else{
-        nut = ''
-    }
-    if(item.vegeterian){
-        veg = 'checked'
-    }
-    else{
-        veg = ''
-    }
     return `<div class="card">
         <img 
           src="${item.image}"/>
@@ -95,29 +77,29 @@ function card(item) {
           </div>
           <div class="card-footer">
             <span class="price">${item.price}$</span>
-            <button class="add-to-cart">Add to cart</button>
+            <button onclick="addto(${item.id}, ${item.price})" class="add-to-cart">Add to cart</button>
           </div>
         </div>
       </div>
       `;
     }
     
-function addto(event, id) {
-    
-    event.preventDefault()
-    
-    let formData = new FormData(event.target)
-    let finalForm = Object.fromEntries(formData)
+    function addto(id, price) {
 
-    finalForm.id = id
-
-    fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
-        method: "POST",
-        headers: {
-            accept: "*/*",
-            'Content-Type': "application/json"
-        },
-        body: JSON.stringify(finalForm)
-    }).then( pasuxi =>  pasuxi.text(finalForm))
-    .then( data => console.log(data) )
-}
+      let object = {
+          "quantity": 1,
+          "price": price,
+          "productId": id
+      }
+  
+      fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+          method: "POST",
+          headers: {
+              accept: "text/plain",
+              'Content-Type': "application/json"
+          },
+          body: JSON.stringify(object)
+          
+      })
+      .then( pasuxi =>  pasuxi.text())
+  }

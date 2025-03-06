@@ -1,12 +1,16 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
 /* navigacia */
 header{
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap:80px;
     background-image: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg);
-    height: 375px;
-    background-attachment: fixed;
     width: 100%;
+    height: 370px;
+    background-attachment: fixed;
 }
 .headertext{
     display: flex;
@@ -15,102 +19,141 @@ header{
     text-align: center;
 }
 nav{
-    height: 70px;
+    height: 60px;
+   
 }
 .insideNav{
     left: 8px;
     right: 8px;
     position: fixed;
-    width: 100%-8px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.663);
     border: 3px solid black;
 }
 .navigacia{
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    padding: 0 10% 0 10%;
-    width: 80%;
+    padding: 2% ;
     color: white;
 }
 .right{
     align-items: center;
     display: flex;
-    gap: 100px;
+    gap: 80px;
 }
 .ordering{
     padding-left: 20px;
 }
-footer{
-    margin-top: 50px;
+
+.navhome{
+  cursor: pointer;
+}
+.navhome:hover{
+  color: yellow;
+  text-decoration: underline yellow;
+  transition: 1.8s;
+}
+.navcart{
+  cursor: pointer;
+}
+.navcart:hover{
+  color: yellow;
+  text-decoration: underline yellow;
+  transition: 1.9s;
+}
+#bars{
+  display: none;
+}
+h2{
     display: flex;
     justify-content: center;
-    background-color: red;
-    color: white;
-    text-align: center;
+    font-size:40px ;
+    padding: 20px;   
 }
-
-.cart{
-    text-align: center;
-    font-size: 36px;
-}
-.title{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5%;
-    background: rgba(128, 128, 128, 0.323);
-    border-bottom: solid 4px gray;
-}
-.titletwo{
-    display: flex;
-    gap: 105px;
-}
-.cardphoto{
-    width: 120px;
-    height: 120px;
-}
-.card{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 75px 0 20px;
-}
-.cardleft{
+.red-bar{
     display: flex;
     gap: 30px;
-}
-.cardright{
-    display: flex;
+    background-color: red;
+    color: white;
+    height: 40px;
     align-items: center;
-    gap: 110px;
+    
 }
-.amount{
+.hom{
+    margin-left: 20px;
+}
+p:hover{
+    color:yellow;
+}
+/* kalata */
+
+section{
+    background-image: url('https://restaurant.stepprojects.ge/images/cart_bg.jpg');
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid gray;
+}
+
+.cart-table th {
+    background: rgba(128, 128, 128, 0.3);
+    font-weight: bold;
+}
+
+.cart-table img {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.qty-box {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.x{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-}
 
-.plius, .minus{
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.qty-box button {
     border: none;
-    background-color: rgba(128, 128, 128, 0.323);
+    background: rgba(128, 128, 128, 0.3);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 100%;
 }
 
+.qty-box button:hover {
+    background: gray;
+    color: white;
+}
+
+.remove-btn {
+    border: none;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background: darkred;
+}
+
+/* fasis totalis nawili */
 .bottom{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
 }
-.proceed{
+.bottom button{
     background-color: red;
     color: black;
     border: none;
@@ -120,39 +163,32 @@ footer{
     transition: 0.6s;
     font-weight: bold;
 }
-.proceed:hover{
+.bottom button:hover{
     background-color: yellow;
-    transition: 0.6s;
+    transition: 1.5s;
 }
 
 .pricespan{
     color: red;
 }
-.namim{
-    display: flex;
-    gap: 30px;
-}
-.navhome{
-    cursor: pointer;
-}
-.navhome:hover{
-    color: yellow;
-    text-decoration: underline yellow;
-    transition: 1.8s;
-}
-.navcart{
-    cursor: pointer;
-}
-.navcart:hover{
-    color: yellow;
-    text-decoration: underline yellow;
-    transition: 1.9s;
-}
-#bars{
-    display: none;
-}
 
-@media (max-width: 850px){
+/* footeri */
+footer{
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+  }
+  
+  footer p {
+    color: white;
+  }
+
+
+@media (max-width: 500px){
     #bars{
         display: inline;
         font-size: 30px;
@@ -160,70 +196,31 @@ footer{
     .navhome, .navcart{
         display: none;
     }
-    .namim{
-        flex-direction: column;
-        gap: 0;
+    .bottom button{
+        align-self: flex-start    ;
     }
-    .card{
-        padding: 0 5% 0 20px;
-    }
-}
-@media (max-width: 550px){
-    .in{
-        position: static;
-    }
-    .bottom{
-        align-items: start;
-    }
-}
-@media (max-width: 770px){
-    .titletwo{
-        gap: 50px;
-    }
-    .cardright{
-        gap: 50px;
-    }
-    .card{
-        padding: 0 2.5% 0 20px;
-    }
-}
-@media (max-width: 590px){
-    .cardh{
+    .bottomtxt{
         font-size: 20px;
     }
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+    table {
+       
+        width: 500px; 
+        border-collapse: collapse;
+    }
+    .main {
+        width: 100%;
+        overflow-x: auto; 
+    }
+    table {
+        width: 100%;
+        min-width: 500px;
+       
+    }
+
 }
-@media (max-width: 490px){
-    .cardphoto{
-        width: 80px;
-        height: 80px;
-    }
-    .cardh{
-        font-size: 16px;
-    }
-}
-@media (max-width: 450px){
-    .tith{
-        font-size: 16px;
-    }
-    .cardphoto{
-        width: 60px;
-        height: 60px;
-    }
-}
-@media (max-width: 400px){
-    .cardleft{
-        gap: 10px;
-    }
-    .titletwo{
-        gap: 30px;
-    }
-    .cardright{
-        gap: 30px;
-    }
-    .bottomh{
-        font-size: 20px;
-    }
-    .bottom{
-        margin-top: 30px;
-    }
-}
+
+

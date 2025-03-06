@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Cart</title>
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -25,27 +25,36 @@
             </div>
         </nav>
         <div class="headertext">
-            <h1>My Cart.</h1>
+            <h1>My Cart</h1>
         </div>
     </header>
+<div class="red-bar">
+    <p onclick="Home()" class="hom">Home</p> /
+    <p onclick="Cart()"class ="crt">Cart</p>
+</div>
     <section>
-        <h1 class="cart">Cart</h1>
+        <h2>Cart</h2>
         <div class="main">
-            <div class="title">
-                <h1 class="tith">Product</h1>
-                <div class="titletwo">
-                    <h1 class="tith">Qty</h1>
-                    <h1 class="tith">Price</h1>
-                    <h1 class="tith">Total</h1>
-                </div>
-            </div>
-            <div class="cardd"></div>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-body"></tbody>
+            </table>
         </div>
         <div class="bottom">
-            <h1 class="bottomh">Total: <span class="pricespan">$52.5</span></h1>
-            <button class="proceed">PROCEED TO CHECKOUT</button>
+            <h1 class="bottomtxt">Total: <span class="pricespan">$0</span></h1>
+            <button>PROCEED TO CHECKOUT</button>
         </div>
     </section>
+
     <footer>
         <p>© Step Ordering 2025, All rights reserved</p>
     </footer>

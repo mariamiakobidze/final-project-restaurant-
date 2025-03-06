@@ -1,54 +1,99 @@
-function Cart() {
-    window.location.href = "./cart.html"
+function Cart() { 
+    window.location.href = "./cart.html";
 }
 function Home() {
-    window.location.href = "./index.html"
+    window.location.href = "./index.html";
 }
 function burgerMenu() {
-    window.location.href = "./menu.html"
+    window.location.href = "./burgermenu.html";
 }
 
 
-let plius = document.querySelector(".plius")
-let minus = document.querySelector(".minus")
-let product = document.querySelector(".cardd")
-fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
-.then(pasuxi => pasuxi.json())
-.then(data => {
-    console.log(data);
-    
-    data.forEach(item => product.innerHTML += card(item))})
+let productTableBody = document.querySelector(".cart-body");
+let totalPriceSpan = document.querySelector(".pricespan");
 
-
-function card(item){
-    let num = item.quantity
-    function mimateba(item){
-        num ++
-    }
-    function gamokleba(){
-        if(num > 0){
-            num--
+function getAllCart() {
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+    .then(response => response.json())
+    .then(data => {
+        let prices = data.map(item => item.product.price * item.quantity);
+        
+        if (prices.length > 0) {
+            let total = prices.reduce((prev, current) => prev + current);
+            totalPriceSpan.innerHTML = "$" + total.toFixed(2);
+        } else {
+            totalPriceSpan.innerHTML = "$0";
         }
-    }
-    return  `<div class="card">
-                <div class="cardleft">
-                    <div class="x">
-                        <i class="fa-solid fa-xmark"></i>
-                        <i class="fa-solid fa-pencil"></i>
-                    </div>
-                    <div class="namim">
-                        <img class="cardphoto" src="${item.product.image}" alt="">
-                        <h1 class="cardh">${item.product.name}</h1>
-                    </div>
-                </div>
-                <div class="cardright">
-                    <div class="amount">
-                        <button onclick="mimateba()" class="plus">+</button>
-                        <h1 class="tith">${num}</h1>
-                        <button onclick="gamokleba()" class="minus">-</button>
-                    </div>
-                    <h1 class="pricecart tith">$${item.price}</h1>
-                    <h1 class="totalprice tith">$10</h1>
-                </div>
-            </div>`
+
+        productTableBody.innerHTML = data.map(item => cartRow(item)).join('');
+    });
+}
+
+getAllCart();
+
+function cartRow(item) {
+    return `
+    <tr>
+        <td>
+            <img src="${item.product.image}" alt="${item.product.name}">
+        </td>
+        <td>${item.product.name}</td>
+        <td>
+            <div class="qty-box">
+                <button onclick="updateQuantity(${item.product.id}, ${item.product.price}, 1)">+</button>
+                <span>${item.quantity}</span>
+                <button onclick="updateQuantity(${item.product.id}, ${item.product.price}, -1)">-</button>
+            </div>
+        </td>
+        <td>$${item.product.price.toFixed(2)}</td>
+        <td>$${(item.product.price * item.quantity).toFixed(2)}</td>
+        <td>
+            <button class="remove-btn" onclick="removeItem(${item.product.id})">Remove</button>
+        </td>
+    </tr>`;
+}
+
+function updateQuantity(productId, price, change) {
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+    .then(response => response.json())
+    .then(data => {
+        let item = data.find(item => item.product.id === productId);
+        let newQuantity = item.quantity + change;
+
+        if (newQuantity <= 0) {
+            removeItem(productId);
+        } else {
+            let cartinfo = {
+                "quantity": newQuantity,
+                "price": price,
+                "productId": productId
+            };
+
+            fetch('https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket', {
+                method: 'PUT',
+                headers: {
+                    accept: '*/*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cartinfo)
+            })
+            .then(response => response.text())
+            .then(() => {
+                getAllCart();
+            });
+        }
+    });
+}
+
+function removeItem(id) {
+    fetch(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`, {
+        method: 'DELETE',
+        headers: {
+            accept: '*/*'
+        }
+    })
+    .then(response => response.text())
+    .then(() => {
+        getAllCart();
+    });
 }
